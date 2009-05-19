@@ -1,0 +1,15 @@
+obj
+bin
+_ReSharper.*
+*.csproj.user
+*.resharper.user
+*.resharper
+*.suo
+*.cache
+*~
+*.swp
+*.swo
+*.properties.xml
+*.config.xml
+*.bootstrap.xml
+*.assemblyinfo.cs
