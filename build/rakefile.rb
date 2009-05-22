@@ -15,7 +15,7 @@ end
 task :compile => :init do
 	framework_dir = File.join(ENV['windir'].dup, 'Microsoft.NET', 'Framework', 'v3.5')
 	msbuild_file = File.join(framework_dir, 'msbuild.exe')
-	sh "#{msbuild_file} ../solution.sln /property:Configuration=debug /t:Rebuild"
+	sh "#{msbuild_file} ../solution.sln /t:Clean /t:Build /property:Configuration=debug"
 end
 
 task :test, :needs => [:compile] do |t,args|

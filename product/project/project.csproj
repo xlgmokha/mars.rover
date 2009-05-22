@@ -45,6 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Command.cs" />
+    <Compile Include="CommandLineArgument.cs" />
+    <Compile Include="ParameterizedCommand.cs" />
+    <Compile Include="Presenter.cs" />
+    <Compile Include="NASAPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
