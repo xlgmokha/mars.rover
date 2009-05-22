@@ -1,3 +1,3 @@
 @echo off
 cls
-rake rakefile.rb %* --trace
+rake rakefile.rb %*

@@ -24,28 +24,26 @@ class LocalSettings
 end
 
 class MbUnitRunner
-	def initialize(items)
-		@source_dir = items.fetch(:source_dir, 'product')
-		@mbunit_dir = items.fetch(:mbunit_dir, 'thirdparty/mbunit')
-		@test_results_dir = items.fetch(:test_results_dir, 'artifacts')
-		@compile_target = items.fetch(:compile_target, 'debug')
-		@category_to_exclude = items.fetch(:category_to_exclude, 'missing')
-		@show_report = items.fetch(:show_report, true)
-    @report_type = items.fetch(:report_type,'XML')
+	def initialize
+		@source_dir ='../product'
+		@mbunit_dir = '../thirdparty/mbunit'
+		@test_results_dir = 'artifacts'
+		@compile_target = 'debug'
+		@show_report = true
+		@report_type = 'text'
 	end
 	
 	def execute_tests(assemblies)
-		Dir.mkdir @test_results_dir unless exists?(@test_results_dir)
-		
 		assemblies.each do |assem|
-      sh build_command_line_for(assem)
+		  sh build_command_line_for(assem)
 		end
 	end
 
-  def build_command_line_for(assembly)
-			file = File.expand_path("#{@source_dir}/#{assembly}/bin/#{@compile_target}/#{assembly}.dll")
-      "#{@mbunit_dir}/mbunit.cons.exe #{file} /rt:#{@report_type} /rnf:#{assembly}.dll-results /rf:#{@test_results_dir} #{'/sr' if @show_report} /ec:#{@category_to_exclude}"
-  end
+	def build_command_line_for(assembly)
+		file = File.expand_path("#{@source_dir}/#{assembly}/bin/#{@compile_target}/#{assembly}.dll")
+		puts "command line: " + file
+		"#{@mbunit_dir}/mbunit.cons.exe #{file} /rt:#{@report_type} /rnf:#{assembly}.dll-results /rf:#{@test_results_dir} #{'/sr' if @show_report}"
+	end
 end
 
 class MSBuildRunner
@@ -77,23 +75,21 @@ task :default => [:test]
 
 task :init  => :clean do
   mkdir 'artifacts'
-  mkdir 'artifacts/coverage'
   mkdir 'artifacts/deploy'
 end
 
 task :compile => :init do
-  MSBuildRunner.compile :compile_target => COMPILE_TARGET, :solution_file => 'solution.sln'
-end
-
-task :deploy => :compile do
-  Dir.glob(File.join('product','**','developwithpassion*.exe')).each do|file|
-    FileUtils.cp file,File.join('artifacts','deploy')
-  end
-  FileUtils.cp develop_with_passion_bdddoc_logo, deploy_dir
-  FileUtils.cp develop_with_passion_bdddoc_css, deploy_dir
+  MSBuildRunner.compile :compile_target => COMPILE_TARGET, :solution_file => '../solution.sln'
 end
 
 task :test, :needs => [:compile] do |t,args|
-  runner = MbUnitRunner.new :compile_target => COMPILE_TARGET, :category_to_exclude => args.category_to_exclude, :show_report => false
-  runner.execute_tests ["#{Project.name}.tests"]
+  runner = MbUnitRunner.new
+  runner.execute_tests ["project.specifications"]
 end
+
+task :deploy => :compile do
+  Dir.glob(File.join('product','**','mars.rover*.exe')).each do|file|
+    FileUtils.cp file,deploy_dir
+  end
+end
+

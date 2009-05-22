@@ -9,7 +9,5 @@ _ReSharper.*
 *~
 *.swp
 *.swo
-*.properties.xml
-*.config.xml
-*.bootstrap.xml
-*.assemblyinfo.cs
+*.properties.rb
+build/artifacts

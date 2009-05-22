@@ -1,7 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "project", "product\project\project.csproj", "{14A5CF37-6941-4C16-B999-AB78EE29B828}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "project.specifications", "product\project.specifications\project.specifications.csproj", "{2375F5A6-0847-4A47-BCBA-C156ACD0D21B}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14A5CF37-6941-4C16-B999-AB78EE29B828}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14A5CF37-6941-4C16-B999-AB78EE29B828}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14A5CF37-6941-4C16-B999-AB78EE29B828}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14A5CF37-6941-4C16-B999-AB78EE29B828}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2375F5A6-0847-4A47-BCBA-C156ACD0D21B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2375F5A6-0847-4A47-BCBA-C156ACD0D21B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2375F5A6-0847-4A47-BCBA-C156ACD0D21B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2375F5A6-0847-4A47-BCBA-C156ACD0D21B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
