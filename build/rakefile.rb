@@ -3,14 +3,13 @@ require 'fileutils'
 
 CLEAN.include('artifacts','**/bin','**/obj')
 
-project_test_dir  = File.join('product',"mars.rover.tests",'bin','debug')
 deploy_dir = File.join('artifacts','deploy')
 
 task :default => [:test]
 
 task :init  => :clean do
-  mkdir 'artifacts'
-  mkdir 'artifacts/deploy'
+	mkdir 'artifacts'
+	mkdir 'artifacts/deploy'
 end
 
 task :compile => :init do
@@ -25,8 +24,11 @@ task :test, :needs => [:compile] do |t,args|
 end
 
 task :deploy => :compile do
-  Dir.glob(File.join('product','**','mars.rover*.exe')).each do|file|
-    FileUtils.cp file,deploy_dir
-  end
+	files =  File.join('../product','**','mars.rover*.exe')
+	puts files
+	Dir.glob(files).each do|file|
+		puts file
+		FileUtils.cp file,deploy_dir
+	end
 end
 

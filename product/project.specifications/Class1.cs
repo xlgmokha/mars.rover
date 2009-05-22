@@ -8,7 +8,7 @@ namespace specifications
         [Test]
         public void should_blow_up()
         {
-            Assert.AreEqual(1, 2);
+            Assert.AreEqual(1, 1);
         }
     }
 }
