@@ -1,27 +1,6 @@
 require 'rake/clean'
 require 'fileutils'
 
-class MbUnitRunner
-	def initialize
-		@mbunit_dir = '../thirdparty/mbunit'
-		@test_results_dir = 'artifacts'
-		@compile_target = 'debug'
-		@show_report = true
-		@report_type = 'text'
-	end
-	
-	def execute_tests(assemblies)
-		assemblies.each do |assem|
-		  sh build_command_line_for(assem)
-		end
-	end
-
-	def build_command_line_for(assembly)
-		file = File.expand_path("../product/#{assembly}/bin/#{@compile_target}/#{assembly}.dll")
-		"#{@mbunit_dir}/mbunit.cons.exe #{file} /rt:#{@report_type} /rnf:#{assembly}.dll-results /rf:#{@test_results_dir} #{'/sr' if @show_report}"
-	end
-end
-
 CLEAN.include('artifacts','**/bin','**/obj')
 
 project_test_dir  = File.join('product',"mars.rover.tests",'bin','debug')
@@ -37,13 +16,12 @@ end
 task :compile => :init do
 	framework_dir = File.join(ENV['windir'].dup, 'Microsoft.NET', 'Framework', 'v3.5')
 	msbuild_file = File.join(framework_dir, 'msbuild.exe')
-	
 	sh "#{msbuild_file} ../solution.sln /property:Configuration=debug /t:Rebuild"
 end
 
 task :test, :needs => [:compile] do |t,args|
-  runner = MbUnitRunner.new
-  runner.execute_tests ["project.specifications"]
+	file = File.expand_path("../product/project.specifications/bin/debug/project.specifications.dll")
+	sh "../thirdparty/mbunit/mbunit.cons.exe #{file} /rt:text /rnf:project.specifications.dll-results /rf:artifacts /sr"
 end
 
 task :deploy => :compile do
