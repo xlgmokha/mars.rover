@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace mars.rover
 {
@@ -14,7 +13,7 @@ namespace mars.rover
 
         public void run_with(IEnumerable<CommandLineArgument> item)
         {
-            throw new NotImplementedException();
+            presenter.run();
         }
 
         static void Main(string[] args)

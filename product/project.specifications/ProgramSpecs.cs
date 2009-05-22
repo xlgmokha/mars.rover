@@ -3,6 +3,7 @@ using developwithpassion.bdd;
 using developwithpassion.bdd.contexts;
 using developwithpassion.bdd.mbunit.standard.observations;
 using mars.rover;
+using Rhino.Mocks;
 
 namespace specifications
 {
