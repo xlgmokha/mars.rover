@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace mars.rover
 {
     public class Program : ParameterizedCommand<IEnumerable<CommandLineArgument>>
     {
-        NASAPresenter presenter;
+        readonly Presenter presenter;
 
-        public Program(NASAPresenter presenter)
+        public Program(Presenter presenter)
         {
             this.presenter = presenter;
         }
@@ -18,6 +19,7 @@ namespace mars.rover
 
         static void Main(string[] args)
         {
+            new Program(null).run_with(args.Select(x => (CommandLineArgument) x));
         }
     }
 }

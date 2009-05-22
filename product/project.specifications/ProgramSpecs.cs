@@ -3,7 +3,6 @@ using developwithpassion.bdd;
 using developwithpassion.bdd.contexts;
 using developwithpassion.bdd.mbunit.standard.observations;
 using mars.rover;
-using Rhino.Mocks;
 
 namespace specifications
 {
@@ -14,9 +13,9 @@ namespace specifications
     public abstract class behaves_like_a_program :
         observations_for_a_sut_with_a_contract<ParameterizedCommand<IEnumerable<CommandLineArgument>>, Program>
     {
-        context c = () => { presenter = the_dependency<NASAPresenter>(); };
+        context c = () => { presenter = the_dependency<Presenter>(); };
 
-        static protected NASAPresenter presenter;
+        static protected Presenter presenter;
     }
 
     public class when_the_program_begins : behaves_like_a_program
