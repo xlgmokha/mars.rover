@@ -1,5 +1,3 @@
-using System;
-
 namespace mars.rover
 {
     public class NASA
@@ -10,7 +8,7 @@ namespace mars.rover
 
         public virtual Rover deploy_rover_to(int x_coordinate, int y_coordinate, Heading heading)
         {
-            return new Rover(new Position(x_coordinate,y_coordinate,heading));
+            return new Rover(x_coordinate, y_coordinate, heading);
         }
     }
 }
