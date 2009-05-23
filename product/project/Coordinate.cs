@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace mars.rover
 {
-    public class Coordinate : IEquatable<Coordinate>
+    public class Coordinate : IEquatable<Coordinate>, IComparable<Coordinate>
     {
         uint coordinate;
 
@@ -45,6 +45,11 @@ namespace mars.rover
         public override int GetHashCode()
         {
             return coordinate.GetHashCode();
+        }
+
+        public int CompareTo(Coordinate other)
+        {
+            return coordinate.CompareTo(other.coordinate);
         }
 
         public override string ToString()
