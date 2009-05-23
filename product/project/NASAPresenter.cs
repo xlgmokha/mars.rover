@@ -26,10 +26,6 @@ namespace mars.rover
     {
     }
 
-    public class Coordinate
-    {
-    }
-
     public interface CallbackCommand<T> : ParameterizedCommand<T>
     {
     }
