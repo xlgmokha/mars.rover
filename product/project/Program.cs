@@ -19,7 +19,7 @@ namespace mars.rover
 
         static void Main(string[] args)
         {
-            new Program(null).run_with(args.Select(x => (CommandLineArgument) x));
+            new Program(new NASAPresenter(null)).run_with(args.Select(x => (CommandLineArgument) x));
         }
     }
 }
