@@ -5,9 +5,9 @@ namespace mars.rover
 {
     public class Coordinate : IEquatable<Coordinate>
     {
-        int coordinate;
+        uint coordinate;
 
-        public Coordinate(int coordinate)
+        public Coordinate(uint coordinate)
         {
             this.coordinate = coordinate;
         }
@@ -22,7 +22,7 @@ namespace mars.rover
             coordinate--;
         }
 
-        static public implicit operator Coordinate(int coordinate)
+        static public implicit operator Coordinate(uint coordinate)
         {
             return new Coordinate(coordinate);
         }
@@ -44,7 +44,7 @@ namespace mars.rover
 
         public override int GetHashCode()
         {
-            return coordinate;
+            return coordinate.GetHashCode();
         }
 
         public override string ToString()

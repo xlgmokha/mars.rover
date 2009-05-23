@@ -54,6 +54,7 @@
     <Compile Include="NASA.cs" />
     <Compile Include="North.cs" />
     <Compile Include="ParameterizedCommand.cs" />
+    <Compile Include="Plateau.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Presenter.cs" />
     <Compile Include="NASAPresenter.cs" />
