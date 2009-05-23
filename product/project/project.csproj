@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Command.cs" />
     <Compile Include="CommandLineArgument.cs" />
+    <Compile Include="Heading.cs" />
     <Compile Include="NASA.cs" />
     <Compile Include="ParameterizedCommand.cs" />
     <Compile Include="Position.cs" />
