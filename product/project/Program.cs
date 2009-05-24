@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace mars.rover
@@ -19,7 +20,8 @@ namespace mars.rover
 
         static void Main(string[] args)
         {
-            new Program(new NASAPresenter(null)).run_with(args.Select(x => (CommandLineArgument) x));
+            new Program(new CaptureUserInstructionsPresenter(new CaptureUserInstructionsConsoleView(Console.In,Console.Out)))
+                .run_with( args.Select(x => (CommandLineArgument) x));
         }
     }
 }

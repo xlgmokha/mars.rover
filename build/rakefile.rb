@@ -30,3 +30,6 @@ task :deploy => :compile do
 	end
 end
 
+task :run => :deploy do
+	sh "#{deploy_dir}/mars.rover.exe"
+end

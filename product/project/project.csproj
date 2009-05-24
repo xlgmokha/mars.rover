@@ -45,8 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CallbackCommand.cs" />
+    <Compile Include="CaptureUserInstructionsConsoleView.cs" />
+    <Compile Include="CaptureUserInstructionsView.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="CommandLineArgument.cs" />
+    <Compile Include="CommandProcessor.cs" />
     <Compile Include="Coordinate.cs" />
     <Compile Include="East.cs" />
     <Compile Include="Heading.cs" />
@@ -54,10 +58,11 @@
     <Compile Include="NASA.cs" />
     <Compile Include="North.cs" />
     <Compile Include="ParameterizedCommand.cs" />
+    <Compile Include="Mars.cs" />
     <Compile Include="Plateau.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Presenter.cs" />
-    <Compile Include="NASAPresenter.cs" />
+    <Compile Include="CaptureUserInstructionsPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rover.cs" />

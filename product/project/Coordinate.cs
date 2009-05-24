@@ -37,6 +37,11 @@ namespace mars.rover
             return new Coordinate(coordinate);
         }
 
+        static public implicit operator uint(Coordinate coordinate)
+        {
+            return coordinate.coordinate;
+        }
+
         public int CompareTo(Coordinate other)
         {
             return coordinate.CompareTo(other.coordinate);

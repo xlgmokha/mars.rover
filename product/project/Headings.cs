@@ -8,7 +8,7 @@ namespace mars.rover
         static public Heading South = new South(new DefaultPlateau());
     }
 
-    public class DefaultPlateau : Plateau
+    public class DefaultPlateau : Mars
     {
         public DefaultPlateau() : base(5, 5)
         {

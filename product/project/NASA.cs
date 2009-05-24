@@ -2,8 +2,11 @@ namespace mars.rover
 {
     public class NASA
     {
-        public virtual void report_top_left_coordinates_to(SpecifyTopLeftCoordinates callback)
+        Plateau plateau;
+
+        public NASA(Plateau plateau)
         {
+            this.plateau = plateau;
         }
 
         public virtual Rover deploy_rover_to(uint x_coordinate, uint y_coordinate, Heading heading)

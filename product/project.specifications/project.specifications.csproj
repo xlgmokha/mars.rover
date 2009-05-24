@@ -68,9 +68,9 @@
     <Compile Include="CoordinateSpecs.cs" />
     <Compile Include="EastSpecs.cs" />
     <Compile Include="NorthSpecs.cs" />
-    <Compile Include="PlateauSpecs.cs" />
+    <Compile Include="MarsSpecs.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="NASAPresenterSpecs.cs" />
+    <Compile Include="CaptureUserInstructionsPresenterSpecs.cs" />
     <Compile Include="NASASpecs.cs" />
     <Compile Include="PositionSpecs.cs" />
     <Compile Include="ProgramSpecs.cs" />

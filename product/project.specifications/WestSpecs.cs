@@ -28,7 +28,7 @@ namespace specifications
 
         public override Heading create_sut()
         {
-            return new West(new Plateau(5, 5));
+            return new West(new Mars(5, 5));
         }
 
         static Coordinate y;
