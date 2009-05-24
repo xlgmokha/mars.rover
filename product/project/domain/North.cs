@@ -43,7 +43,7 @@ namespace mars.rover.domain
 
         public override string ToString()
         {
-            return "North";
+            return "N";
         }
     }
 }

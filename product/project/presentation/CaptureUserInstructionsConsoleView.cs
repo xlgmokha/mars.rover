@@ -18,11 +18,14 @@ namespace mars.rover.presentation
             writer.WriteLine("Enter upper right coordinates:");
             presenter.provide_upper_right_coordinates(reader.ReadLine());
 
-            writer.WriteLine("enter coordinates to deploy a rover to:");
-            presenter.deploy_rover_to(reader.ReadLine());
+            for (int i = 0; i < 2; i++)
+            {
+                writer.WriteLine("enter coordinates to deploy a rover to:");
+                presenter.deploy_rover_to(reader.ReadLine());
 
-            writer.WriteLine("enter commands to navigate rover:");
-            presenter.navigate_rover_using(reader.ReadLine());
+                writer.WriteLine("enter commands to navigate rover:");
+                presenter.navigate_rover_using(reader.ReadLine());
+            }
         }
 
         public void display(uint x, uint y, string heading)

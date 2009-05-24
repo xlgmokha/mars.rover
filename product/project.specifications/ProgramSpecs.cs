@@ -24,7 +24,7 @@ namespace specifications
     {
         it should_wait_for_instructions_from_nasa = () => presenter.received(x => x.run());
 
-        because b = () => sut.run_with(args);
+        because b = () => sut.run_against(args);
 
         static readonly IEnumerable<CommandLineArgument> args = new List<CommandLineArgument> {""};
     }

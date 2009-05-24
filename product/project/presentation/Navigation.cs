@@ -4,7 +4,7 @@ using mars.rover.domain;
 
 namespace mars.rover.presentation
 {
-    public class Navigation : Specification<char>
+    public class Navigation : Specification<char>, ParameterizedCommand<Rover>
     {
         readonly char command_text;
         readonly Action<Rover> navigation;
@@ -15,7 +15,7 @@ namespace mars.rover.presentation
             this.navigation = navigation;
         }
 
-        public virtual void navigate(Rover rover)
+        public virtual void run_against(Rover rover)
         {
             navigation(rover);
         }

@@ -41,9 +41,7 @@ namespace mars.rover.presentation
 
         public virtual void navigate_rover_using(string line)
         {
-            foreach (var command in line)
-                navigations.Single(x => x.is_satisfied_by(command)).navigate(rover);
-
+            line.each(x => navigations.Single(y => y.is_satisfied_by(x)).run_against(rover));
             view.display(rover.x, rover.y, rover.heading.ToString());
         }
 

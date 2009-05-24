@@ -33,7 +33,7 @@ namespace mars.rover.domain
 
         public override string ToString()
         {
-            return "South";
+            return "S";
         }
 
         public override bool Equals(object obj)

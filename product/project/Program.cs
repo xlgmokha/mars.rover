@@ -16,7 +16,7 @@ namespace mars.rover
             this.presenter = presenter;
         }
 
-        public void run_with(IEnumerable<CommandLineArgument> item)
+        public void run_against(IEnumerable<CommandLineArgument> item)
         {
             presenter.run();
         }
@@ -28,10 +28,10 @@ namespace mars.rover
                     new CaptureUserInstructionsConsoleView(Console.In, Console.Out),
                     new DefaultRegistry<HeadingFactory>
                         {
-                            new DefaultHeadingFactory("N", x => new North(x)),
-                            new DefaultHeadingFactory("E", x => new East(x)),
-                            new DefaultHeadingFactory("W", x => new West(x)),
-                            new DefaultHeadingFactory("S", x => new South(x)),
+                            new HeadingFactory("N", x => new North(x)),
+                            new HeadingFactory("E", x => new East(x)),
+                            new HeadingFactory("W", x => new West(x)),
+                            new HeadingFactory("S", x => new South(x)),
                         },
                     new DefaultRegistry<Navigation>
                         {
@@ -40,7 +40,7 @@ namespace mars.rover
                             new Navigation('M', x => x.move_forward()),
                         }
                     ));
-            program.run_with(args.Select(x => (CommandLineArgument) x));
+            program.run_against(args.Select(x => (CommandLineArgument) x));
         }
     }
 }
