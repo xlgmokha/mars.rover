@@ -66,6 +66,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoordinateSpecs.cs" />
+    <Compile Include="EastSpecs.cs" />
+    <Compile Include="NorthSpecs.cs" />
     <Compile Include="PlateauSpecs.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="NASAPresenterSpecs.cs" />
@@ -74,6 +76,8 @@
     <Compile Include="ProgramSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoverSpecs.cs" />
+    <Compile Include="SouthSpecs.cs" />
+    <Compile Include="WestSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\project\project.csproj">

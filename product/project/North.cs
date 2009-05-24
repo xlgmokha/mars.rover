@@ -2,19 +2,27 @@ namespace mars.rover
 {
     public class North : Heading
     {
+        readonly Plateau plateau;
+
+        public North(Plateau plateau)
+        {
+            this.plateau = plateau;
+        }
+
         public Heading turn_left()
         {
-            return new West();
+            return new West(plateau);
         }
 
         public Heading turn_right()
         {
-            return new East();
+            return new East(plateau);
         }
 
         public void move_forward_from(Coordinate x, Coordinate y)
         {
-            y.increment();
+            if (plateau.within_y_axis(y.plus(1)))
+                y.increment();
         }
 
         public bool Equals(Heading other)

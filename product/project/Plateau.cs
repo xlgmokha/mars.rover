@@ -11,9 +11,14 @@ namespace mars.rover
             this.top_y_coordinate = top_y_coordinate;
         }
 
-        public virtual bool within_boundary(Coordinate x, Coordinate y)
+        public virtual bool within_x_axis(Coordinate x)
         {
-            return top_y_coordinate.CompareTo(y) >= 0 && top_x_coordinate.CompareTo(x) >= 0;
+            return top_x_coordinate.CompareTo(x) >= 0;
+        }
+
+        public virtual bool within_y_axis(Coordinate y)
+        {
+            return top_y_coordinate.CompareTo(y) >= 0;
         }
     }
 }

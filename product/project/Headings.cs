@@ -2,9 +2,16 @@ namespace mars.rover
 {
     static public class Headings
     {
-        static public Heading North = new North();
-        static public Heading East = new East();
-        static public Heading West = new West();
-        static public Heading South = new South();
+        static public Heading North = new North(new DefaultPlateau());
+        static public Heading East = new East(new DefaultPlateau());
+        static public Heading West = new West(new DefaultPlateau());
+        static public Heading South = new South(new DefaultPlateau());
+    }
+
+    public class DefaultPlateau : Plateau
+    {
+        public DefaultPlateau() : base(5, 5)
+        {
+        }
     }
 }
