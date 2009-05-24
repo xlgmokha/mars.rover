@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using mars.rover.common;
 using mars.rover.domain;
+using mars.rover.presentation.model;
 
 namespace mars.rover.presentation
 {

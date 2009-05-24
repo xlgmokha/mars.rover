@@ -2,7 +2,7 @@ using System;
 using mars.rover.common;
 using mars.rover.domain;
 
-namespace mars.rover.presentation
+namespace mars.rover.presentation.model
 {
     public class HeadingFactory : Specification<string>
     {

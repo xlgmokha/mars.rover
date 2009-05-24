@@ -18,7 +18,7 @@ namespace mars.rover.presentation
             writer.WriteLine("Enter upper right coordinates:");
             presenter.provide_upper_right_coordinates(reader.ReadLine());
 
-            for (int i = 0; i < 2; i++)
+            for (var i = 0; i < 2; i++)
             {
                 writer.WriteLine("enter coordinates to deploy a rover to:");
                 presenter.deploy_rover_to(reader.ReadLine());

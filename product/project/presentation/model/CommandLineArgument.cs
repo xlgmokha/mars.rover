@@ -1,4 +1,4 @@
-namespace mars.rover.presentation
+namespace mars.rover.presentation.model
 {
     public class CommandLineArgument
     {

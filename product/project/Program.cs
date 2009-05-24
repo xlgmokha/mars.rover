@@ -4,6 +4,7 @@ using System.Linq;
 using mars.rover.common;
 using mars.rover.domain;
 using mars.rover.presentation;
+using mars.rover.presentation.model;
 
 namespace mars.rover
 {
@@ -32,12 +33,14 @@ namespace mars.rover
                             new HeadingFactory("E", x => new East(x)),
                             new HeadingFactory("W", x => new West(x)),
                             new HeadingFactory("S", x => new South(x)),
+                            new UnknownHeadingFactory(),
                         },
                     new DefaultRegistry<Navigation>
                         {
                             new Navigation('L', x => x.turn_left()),
                             new Navigation('R', x => x.turn_right()),
                             new Navigation('M', x => x.move_forward()),
+                            new UnknownNavigation(),
                         }
                     ));
             program.run_against(args.Select(x => (CommandLineArgument) x));

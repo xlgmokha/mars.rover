@@ -5,6 +5,7 @@ using developwithpassion.bdd.mbunit.standard.observations;
 using mars.rover;
 using mars.rover.common;
 using mars.rover.presentation;
+using mars.rover.presentation.model;
 
 namespace specifications
 {

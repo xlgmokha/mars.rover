@@ -48,12 +48,12 @@
     <Compile Include="common\DefaultRegistry.cs" />
     <Compile Include="common\EnumerableExtensions.cs" />
     <Compile Include="common\Registry.cs" />
-    <Compile Include="presentation\HeadingFactory.cs" />
+    <Compile Include="presentation\model\HeadingFactory.cs" />
     <Compile Include="common\CallbackCommand.cs" />
     <Compile Include="presentation\CaptureUserInstructionsConsoleView.cs" />
     <Compile Include="presentation\CaptureUserInstructionsView.cs" />
     <Compile Include="common\Command.cs" />
-    <Compile Include="presentation\CommandLineArgument.cs" />
+    <Compile Include="presentation\model\CommandLineArgument.cs" />
     <Compile Include="presentation\infrastructure\CommandProcessor.cs" />
     <Compile Include="domain\Coordinate.cs" />
     <Compile Include="domain\East.cs" />
@@ -64,7 +64,7 @@
     <Compile Include="common\ParameterizedCommand.cs" />
     <Compile Include="domain\Mars.cs" />
     <Compile Include="domain\Plateau.cs" />
-    <Compile Include="presentation\Navigation.cs" />
+    <Compile Include="presentation\model\Navigation.cs" />
     <Compile Include="presentation\Presenter.cs" />
     <Compile Include="presentation\CaptureUserInstructionsPresenter.cs" />
     <Compile Include="common\Specification.cs" />
@@ -73,6 +73,8 @@
     <Compile Include="domain\Rover.cs" />
     <Compile Include="domain\South.cs" />
     <Compile Include="domain\West.cs" />
+    <Compile Include="presentation\model\UnknownHeadingFactory.cs" />
+    <Compile Include="presentation\model\UnknownNavigation.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
