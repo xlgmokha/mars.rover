@@ -27,6 +27,11 @@ namespace mars.rover
             return new Coordinate(coordinate);
         }
 
+        public int CompareTo(Coordinate other)
+        {
+            return coordinate.CompareTo(other.coordinate);
+        }
+
         public bool Equals(Coordinate other)
         {
             if (ReferenceEquals(null, other)) return false;
@@ -45,11 +50,6 @@ namespace mars.rover
         public override int GetHashCode()
         {
             return coordinate.GetHashCode();
-        }
-
-        public int CompareTo(Coordinate other)
-        {
-            return coordinate.CompareTo(other.coordinate);
         }
 
         public override string ToString()
