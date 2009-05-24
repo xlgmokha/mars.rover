@@ -3,6 +3,8 @@ using developwithpassion.bdd;
 using developwithpassion.bdd.contexts;
 using developwithpassion.bdd.mbunit.standard.observations;
 using mars.rover;
+using mars.rover.presentation;
+using mars.rover.presentation.infrastructure;
 
 namespace specifications
 {

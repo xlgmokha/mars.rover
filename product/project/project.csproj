@@ -45,29 +45,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CallbackCommand.cs" />
-    <Compile Include="CaptureUserInstructionsConsoleView.cs" />
-    <Compile Include="CaptureUserInstructionsView.cs" />
-    <Compile Include="Command.cs" />
-    <Compile Include="CommandLineArgument.cs" />
-    <Compile Include="CommandProcessor.cs" />
-    <Compile Include="Coordinate.cs" />
-    <Compile Include="East.cs" />
-    <Compile Include="Heading.cs" />
-    <Compile Include="Headings.cs" />
-    <Compile Include="NASA.cs" />
-    <Compile Include="North.cs" />
-    <Compile Include="ParameterizedCommand.cs" />
-    <Compile Include="Mars.cs" />
-    <Compile Include="Plateau.cs" />
-    <Compile Include="Position.cs" />
-    <Compile Include="Presenter.cs" />
-    <Compile Include="CaptureUserInstructionsPresenter.cs" />
+    <Compile Include="presentation\infrastructure\CallbackCommand.cs" />
+    <Compile Include="presentation\CaptureUserInstructionsConsoleView.cs" />
+    <Compile Include="presentation\CaptureUserInstructionsView.cs" />
+    <Compile Include="common\Command.cs" />
+    <Compile Include="presentation\CommandLineArgument.cs" />
+    <Compile Include="presentation\infrastructure\CommandProcessor.cs" />
+    <Compile Include="domain\Coordinate.cs" />
+    <Compile Include="domain\East.cs" />
+    <Compile Include="domain\Heading.cs" />
+    <Compile Include="domain\Headings.cs" />
+    <Compile Include="domain\NASA.cs" />
+    <Compile Include="domain\North.cs" />
+    <Compile Include="presentation\infrastructure\ParameterizedCommand.cs" />
+    <Compile Include="domain\Mars.cs" />
+    <Compile Include="domain\Plateau.cs" />
+    <Compile Include="presentation\Presenter.cs" />
+    <Compile Include="presentation\CaptureUserInstructionsPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rover.cs" />
-    <Compile Include="South.cs" />
-    <Compile Include="West.cs" />
+    <Compile Include="domain\Rover.cs" />
+    <Compile Include="domain\South.cs" />
+    <Compile Include="domain\West.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
