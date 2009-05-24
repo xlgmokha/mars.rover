@@ -45,11 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="presentation\infrastructure\CallbackCommand.cs" />
+    <Compile Include="common\DefaultRegistry.cs" />
+    <Compile Include="common\Registry.cs" />
+    <Compile Include="presentation\DefaultHeadingFactory.cs" />
+    <Compile Include="common\CallbackCommand.cs" />
     <Compile Include="presentation\CaptureUserInstructionsConsoleView.cs" />
     <Compile Include="presentation\CaptureUserInstructionsView.cs" />
     <Compile Include="common\Command.cs" />
     <Compile Include="presentation\CommandLineArgument.cs" />
+    <Compile Include="presentation\HeadingFactory.cs" />
     <Compile Include="presentation\infrastructure\CommandProcessor.cs" />
     <Compile Include="domain\Coordinate.cs" />
     <Compile Include="domain\East.cs" />
@@ -57,11 +61,13 @@
     <Compile Include="domain\Headings.cs" />
     <Compile Include="domain\NASA.cs" />
     <Compile Include="domain\North.cs" />
-    <Compile Include="presentation\infrastructure\ParameterizedCommand.cs" />
+    <Compile Include="common\ParameterizedCommand.cs" />
     <Compile Include="domain\Mars.cs" />
     <Compile Include="domain\Plateau.cs" />
+    <Compile Include="presentation\Navigation.cs" />
     <Compile Include="presentation\Presenter.cs" />
     <Compile Include="presentation\CaptureUserInstructionsPresenter.cs" />
+    <Compile Include="common\Specification.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="domain\Rover.cs" />

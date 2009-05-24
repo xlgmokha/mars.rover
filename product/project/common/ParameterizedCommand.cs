@@ -1,4 +1,4 @@
-namespace mars.rover.presentation.infrastructure
+namespace mars.rover.common
 {
     public interface ParameterizedCommand<T>
     {
