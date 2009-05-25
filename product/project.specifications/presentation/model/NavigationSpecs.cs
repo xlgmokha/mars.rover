@@ -19,9 +19,7 @@ namespace specifications.presentation.model
 
         context c = () =>
                         {
-                            an<object>();
-                            rover = MockRepository.GenerateStub<Rover>(new Coordinate(0), new Coordinate(0),
-                                                                       an<Heading>());
+                            rover = MockRepository.GenerateStub<Rover>(new Coordinate(0), new Coordinate(0), an<Heading>());
                             provide_a_basic_sut_constructor_argument('l');
                             provide_a_basic_sut_constructor_argument((Action<Rover>) (x => x.turn_left()));
                         };
