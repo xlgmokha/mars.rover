@@ -1,25 +1,16 @@
-using System;
-using System.Linq;
-using mars.rover.common;
-using mars.rover.domain;
-using mars.rover.presentation.model;
+using mars.rover.presentation.infrastructure;
 
 namespace mars.rover.presentation
 {
     public class CaptureUserInstructionsPresenter : Presenter
     {
         readonly CaptureUserInstructionsView view;
-        readonly Registry<HeadingFactory> factories;
-        readonly Registry<Navigation> navigations;
-        Mars plateau;
-        Rover rover;
+        readonly CommandPump<string> pump;
 
-        public CaptureUserInstructionsPresenter(CaptureUserInstructionsView view, Registry<HeadingFactory> factories,
-                                                Registry<Navigation> navigations)
+        public CaptureUserInstructionsPresenter(CaptureUserInstructionsView view, CommandPump<string> pump)
         {
             this.view = view;
-            this.factories = factories;
-            this.navigations = navigations;
+            this.pump = pump;
         }
 
         public virtual void run()
@@ -29,26 +20,22 @@ namespace mars.rover.presentation
 
         public virtual void provide_upper_right_coordinates(string line)
         {
-            var coordinates = line.Split(new[] {' '});
-            plateau = new Mars(Convert.ToUInt32(coordinates[0]), Convert.ToUInt32(coordinates[1]));
+            pump.run<CreateMarsCommand>(line);
         }
 
         public virtual void deploy_rover_to(string deployment_coordinates)
         {
-            var coordinates = deployment_coordinates.Split(new[] {' '});
-            rover = new Rover(Convert.ToUInt32(coordinates[0]), Convert.ToUInt32(coordinates[1]),
-                              find_heading_for(coordinates[2]));
+            pump.run<DeployRoverCommand>(deployment_coordinates);
         }
 
         public virtual void navigate_rover_using(string navigation_commands)
         {
-            navigation_commands.each(x => navigations.First(y => y.is_satisfied_by(x)).run_against(rover));
-            view.display(rover.ToString());
+            pump.run<NavigateRoverCommand>(navigation_commands);
         }
 
-        Heading find_heading_for(string heading)
+        public void go()
         {
-            return factories.First(x => x.is_satisfied_by(heading)).create(plateau);
+            pump.run();
         }
     }
 }

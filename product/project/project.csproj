@@ -48,6 +48,13 @@
     <Compile Include="common\DefaultRegistry.cs" />
     <Compile Include="common\EnumerableExtensions.cs" />
     <Compile Include="common\Registry.cs" />
+    <Compile Include="common\ActionCommand.cs" />
+    <Compile Include="presentation\infrastructure\CommandFactory.cs" />
+    <Compile Include="presentation\infrastructure\CommandPump.cs" />
+    <Compile Include="presentation\infrastructure\SynchronousCommandPump.cs" />
+    <Compile Include="presentation\CreateMarsCommand.cs" />
+    <Compile Include="presentation\DeployRoverCommand.cs" />
+    <Compile Include="presentation\infrastructure\SynchronousCommandProcessor.cs" />
     <Compile Include="presentation\model\HeadingFactory.cs" />
     <Compile Include="common\CallbackCommand.cs" />
     <Compile Include="presentation\CaptureUserInstructionsConsoleView.cs" />
@@ -64,6 +71,8 @@
     <Compile Include="domain\Mars.cs" />
     <Compile Include="domain\Plateau.cs" />
     <Compile Include="presentation\model\Navigation.cs" />
+    <Compile Include="domain\NASA.cs" />
+    <Compile Include="presentation\NavigateRoverCommand.cs" />
     <Compile Include="presentation\Presenter.cs" />
     <Compile Include="presentation\CaptureUserInstructionsPresenter.cs" />
     <Compile Include="common\Specification.cs" />

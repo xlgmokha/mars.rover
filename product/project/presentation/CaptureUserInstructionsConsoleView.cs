@@ -15,7 +15,7 @@ namespace mars.rover.presentation
 
         public void attach_to(CaptureUserInstructionsPresenter presenter)
         {
-            writer.WriteLine("Enter upper right coordinates:");
+            writer.WriteLine("enter upper right coordinates:");
             presenter.provide_upper_right_coordinates(reader.ReadLine());
 
             for (var i = 0; i < 2; i++)
@@ -26,6 +26,7 @@ namespace mars.rover.presentation
                 writer.WriteLine("enter commands to navigate rover:");
                 presenter.navigate_rover_using(reader.ReadLine());
             }
+            presenter.go();
         }
 
         public void display(string location)
