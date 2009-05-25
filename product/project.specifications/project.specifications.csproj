@@ -73,7 +73,6 @@
     <Compile Include="domain\MarsSpecs.cs" />
     <Compile Include="MockingExtensions.cs" />
     <Compile Include="presentation\CaptureUserInstructionsPresenterSpecs.cs" />
-    <Compile Include="domain\PositionSpecs.cs" />
     <Compile Include="presentation\infrastructure\CommandFactorySpecs.cs" />
     <Compile Include="presentation\infrastructure\SynchronousCommandProcessorSpecs.cs" />
     <Compile Include="presentation\infrastructure\SynchronousCommandPumpSpecs.cs" />
