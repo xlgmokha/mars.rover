@@ -28,9 +28,9 @@ namespace mars.rover.presentation
             }
         }
 
-        public void display(uint x, uint y, string heading)
+        public void display(string location)
         {
-            writer.WriteLine("{0} {1} {2}", x, y, heading);
+            writer.WriteLine(location);
         }
     }
 }

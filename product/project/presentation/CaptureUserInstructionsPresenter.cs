@@ -33,22 +33,22 @@ namespace mars.rover.presentation
             plateau = new Mars(Convert.ToUInt32(coordinates[0]), Convert.ToUInt32(coordinates[1]));
         }
 
-        public virtual void deploy_rover_to(string line)
+        public virtual void deploy_rover_to(string deployment_coordinates)
         {
-            var coordinates = line.Split(new[] {' '});
+            var coordinates = deployment_coordinates.Split(new[] {' '});
             rover = new Rover(Convert.ToUInt32(coordinates[0]), Convert.ToUInt32(coordinates[1]),
                               find_heading_for(coordinates[2]));
         }
 
-        public virtual void navigate_rover_using(string line)
+        public virtual void navigate_rover_using(string navigation_commands)
         {
-            line.each(x => navigations.Single(y => y.is_satisfied_by(x)).run_against(rover));
-            view.display(rover.x, rover.y, rover.heading.ToString());
+            navigation_commands.each(x => navigations.First(y => y.is_satisfied_by(x)).run_against(rover));
+            view.display(rover.ToString());
         }
 
         Heading find_heading_for(string heading)
         {
-            return factories.Single(x => x.is_satisfied_by(heading)).create(plateau);
+            return factories.First(x => x.is_satisfied_by(heading)).create(plateau);
         }
     }
 }

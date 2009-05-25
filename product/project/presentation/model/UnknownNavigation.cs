@@ -4,7 +4,7 @@ namespace mars.rover.presentation.model
 {
     internal class UnknownNavigation : Navigation
     {
-        public UnknownNavigation() : base('a', null)
+        public UnknownNavigation() : base('?', null)
         {
         }
 

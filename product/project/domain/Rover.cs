@@ -27,5 +27,10 @@ namespace mars.rover.domain
         {
             heading.move_forward_from(x, y);
         }
+
+        public override string ToString()
+        {
+            return string.Format("{0} {1} {2}", x, y, heading);
+        }
     }
 }

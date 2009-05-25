@@ -59,7 +59,6 @@
     <Compile Include="domain\East.cs" />
     <Compile Include="domain\Heading.cs" />
     <Compile Include="domain\Headings.cs" />
-    <Compile Include="domain\NASA.cs" />
     <Compile Include="domain\North.cs" />
     <Compile Include="common\ParameterizedCommand.cs" />
     <Compile Include="domain\Mars.cs" />

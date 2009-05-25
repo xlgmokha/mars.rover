@@ -65,13 +65,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="common\DefaultRegistrySpecs.cs" />
     <Compile Include="domain\CoordinateSpecs.cs" />
     <Compile Include="domain\EastSpecs.cs" />
     <Compile Include="domain\NorthSpecs.cs" />
     <Compile Include="domain\MarsSpecs.cs" />
     <Compile Include="presentation\CaptureUserInstructionsPresenterSpecs.cs" />
-    <Compile Include="domain\NASASpecs.cs" />
     <Compile Include="domain\PositionSpecs.cs" />
+    <Compile Include="presentation\model\HeadingFactorySpecs.cs" />
+    <Compile Include="presentation\model\NavigationSpecs.cs" />
     <Compile Include="ProgramSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="domain\RoverSpecs.cs" />

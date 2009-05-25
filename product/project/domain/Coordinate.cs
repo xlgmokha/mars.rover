@@ -22,12 +22,12 @@ namespace mars.rover.domain
             coordinate--;
         }
 
-        public Coordinate plus(uint other)
+        public virtual Coordinate plus(uint other)
         {
             return new Coordinate(coordinate + other);
         }
 
-        public Coordinate minus(uint other)
+        public virtual Coordinate minus(uint other)
         {
             return new Coordinate(coordinate - other);
         }
@@ -42,7 +42,7 @@ namespace mars.rover.domain
             return coordinate.coordinate;
         }
 
-        public int CompareTo(Coordinate other)
+        public virtual int CompareTo(Coordinate other)
         {
             return coordinate.CompareTo(other.coordinate);
         }
