@@ -52,8 +52,8 @@
     <Compile Include="presentation\infrastructure\CommandFactory.cs" />
     <Compile Include="presentation\infrastructure\CommandPump.cs" />
     <Compile Include="presentation\infrastructure\SynchronousCommandPump.cs" />
-    <Compile Include="presentation\CreateMarsCommand.cs" />
-    <Compile Include="presentation\DeployRoverCommand.cs" />
+    <Compile Include="service\application\CreateMarsCommand.cs" />
+    <Compile Include="service\application\DeployRoverCommand.cs" />
     <Compile Include="presentation\infrastructure\SynchronousCommandProcessor.cs" />
     <Compile Include="presentation\model\HeadingFactory.cs" />
     <Compile Include="common\CallbackCommand.cs" />
@@ -72,7 +72,7 @@
     <Compile Include="domain\Plateau.cs" />
     <Compile Include="presentation\model\Navigation.cs" />
     <Compile Include="domain\NASA.cs" />
-    <Compile Include="presentation\NavigateRoverCommand.cs" />
+    <Compile Include="service\application\NavigateRoverCommand.cs" />
     <Compile Include="presentation\Presenter.cs" />
     <Compile Include="presentation\CaptureUserInstructionsPresenter.cs" />
     <Compile Include="common\Specification.cs" />
@@ -83,6 +83,10 @@
     <Compile Include="domain\West.cs" />
     <Compile Include="presentation\model\UnknownHeadingFactory.cs" />
     <Compile Include="presentation\model\UnknownNavigation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="service\domain\" />
+    <Folder Include="service\infrastructure\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

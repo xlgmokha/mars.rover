@@ -26,7 +26,7 @@ namespace mars.rover.presentation
                 writer.WriteLine("enter commands to navigate rover:");
                 presenter.navigate_rover_using(reader.ReadLine());
             }
-            presenter.go();
+            presenter.process_output();
         }
 
         public void display(string location)

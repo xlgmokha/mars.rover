@@ -1,4 +1,5 @@
 using mars.rover.presentation.infrastructure;
+using mars.rover.service.application;
 
 namespace mars.rover.presentation
 {
@@ -33,7 +34,7 @@ namespace mars.rover.presentation
             pump.run<NavigateRoverCommand, string>(navigation_commands);
         }
 
-        public void go()
+        public void process_output()
         {
             pump.run();
         }

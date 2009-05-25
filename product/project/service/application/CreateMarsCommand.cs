@@ -2,11 +2,11 @@ using System;
 using mars.rover.common;
 using mars.rover.domain;
 
-namespace mars.rover.presentation
+namespace mars.rover.service.application
 {
     public class CreateMarsCommand : ParameterizedCommand<string>
     {
-        NASA nasa;
+        readonly NASA nasa;
 
         public CreateMarsCommand(NASA nasa)
         {

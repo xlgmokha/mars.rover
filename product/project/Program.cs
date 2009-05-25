@@ -6,6 +6,7 @@ using mars.rover.domain;
 using mars.rover.presentation;
 using mars.rover.presentation.infrastructure;
 using mars.rover.presentation.model;
+using mars.rover.service.application;
 
 namespace mars.rover
 {

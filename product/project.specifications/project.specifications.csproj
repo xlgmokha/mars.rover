@@ -68,10 +68,15 @@
     <Compile Include="common\DefaultRegistrySpecs.cs" />
     <Compile Include="domain\CoordinateSpecs.cs" />
     <Compile Include="domain\EastSpecs.cs" />
+    <Compile Include="domain\NASASpecs.cs" />
     <Compile Include="domain\NorthSpecs.cs" />
     <Compile Include="domain\MarsSpecs.cs" />
+    <Compile Include="MockingExtensions.cs" />
     <Compile Include="presentation\CaptureUserInstructionsPresenterSpecs.cs" />
     <Compile Include="domain\PositionSpecs.cs" />
+    <Compile Include="presentation\infrastructure\CommandFactorySpecs.cs" />
+    <Compile Include="presentation\infrastructure\SynchronousCommandProcessorSpecs.cs" />
+    <Compile Include="presentation\infrastructure\SynchronousCommandPumpSpecs.cs" />
     <Compile Include="presentation\model\HeadingFactorySpecs.cs" />
     <Compile Include="presentation\model\NavigationSpecs.cs" />
     <Compile Include="ProgramSpecs.cs" />

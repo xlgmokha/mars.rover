@@ -11,7 +11,7 @@ namespace mars.rover.common
             this.command = command;
         }
 
-        public void run()
+        public virtual void run()
         {
             command();
         }
