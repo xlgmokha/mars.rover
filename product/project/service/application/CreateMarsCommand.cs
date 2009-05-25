@@ -16,8 +16,7 @@ namespace mars.rover.service.application
         public void run_against(string item)
         {
             var coordinates = item.Split(new[] {' '});
-            var plateau = new Mars(Convert.ToUInt32(coordinates[0]), Convert.ToUInt32(coordinates[1]));
-            nasa.plateau = plateau;
+            nasa.plateau = new Mars(Convert.ToUInt32(coordinates[0]), Convert.ToUInt32(coordinates[1]));
         }
     }
 }

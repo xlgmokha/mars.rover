@@ -13,7 +13,7 @@ namespace specifications.presentation.infrastructure
     }
 
     public class when_putting_a_command_on_the_command_processor :
-        observations_for_a_sut_with_a_contract<CommandPump, SynchronousCommandPump>
+        observations_for_a_sut_with_a_contract<EventProcessor, SynchronousCommandPump>
     {
         it should_place_the_correct_command_on_the_processor =
             () => processor.received(x => x.add(Arg<Command>.Is.Anything));
@@ -28,7 +28,7 @@ namespace specifications.presentation.infrastructure
                             registry.is_told_to(x => x.all()).it_will_return(correct, incorrect);
                         };
 
-        because b = () => sut.run<Correct, string>("blah");
+        because b = () => sut.process<Correct, string>("blah");
 
         static CommandProcessor processor;
         static Registry<ParameterizedCommand<string>> registry;

@@ -16,11 +16,11 @@ namespace specifications.presentation
         context c = () =>
                         {
                             view = the_dependency<CaptureUserInstructionsView>();
-                            pump = the_dependency<CommandPump>();
+                            pump = the_dependency<EventProcessor>();
                         };
 
         static protected CaptureUserInstructionsView view;
-        static protected CommandPump pump;
+        static protected EventProcessor pump;
     }
 
     public class when_initializing_the_user_interface : concerns_for_presenter
@@ -32,7 +32,7 @@ namespace specifications.presentation
 
     public class when_the_user_specifies_the_boundary_of_the_plateau : concerns_for_presenter
     {
-        it should_create_mars_with_the_boundary_coordinates = () => pump.run<CreateMarsCommand, string>(input);
+        it should_create_mars_with_the_boundary_coordinates = () => pump.process<CreateMarsCommand, string>(input);
 
         context c = () => { input = "5 5"; };
 
@@ -43,7 +43,7 @@ namespace specifications.presentation
 
     public class when_the_user_specifies_the_deployment_coordinates : concerns_for_presenter
     {
-        it should_deploy_a_rover_to_those_coordinates = () => pump.run<DeployRoverCommand, string>(input);
+        it should_deploy_a_rover_to_those_coordinates = () => pump.process<DeployRoverCommand, string>(input);
 
         context c = () => { input = "1 2 N"; };
 
@@ -54,7 +54,7 @@ namespace specifications.presentation
 
     public class when_the_user_specifies_the_navigation_instructions : concerns_for_presenter
     {
-        it should_navigate_the_rover_using_those_instructions = () => pump.run<NavigateRoverCommand, string>(input);
+        it should_navigate_the_rover_using_those_instructions = () => pump.process<NavigateRoverCommand, string>(input);
 
         context c = () => { input = "lmlmlmlmm"; };
 

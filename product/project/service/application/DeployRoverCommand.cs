@@ -4,7 +4,7 @@ using mars.rover.common;
 using mars.rover.domain;
 using mars.rover.presentation.model;
 
-namespace mars.rover.presentation
+namespace mars.rover.service.application
 {
     public class DeployRoverCommand : ParameterizedCommand<string>
     {

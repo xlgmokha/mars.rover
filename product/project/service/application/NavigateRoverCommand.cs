@@ -1,9 +1,10 @@
 using System.Linq;
 using mars.rover.common;
 using mars.rover.domain;
+using mars.rover.presentation;
 using mars.rover.presentation.model;
 
-namespace mars.rover.presentation
+namespace mars.rover.service.application
 {
     public class NavigateRoverCommand : ParameterizedCommand<string>
     {

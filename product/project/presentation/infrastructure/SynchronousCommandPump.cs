@@ -3,7 +3,7 @@ using mars.rover.common;
 
 namespace mars.rover.presentation.infrastructure
 {
-    public class SynchronousCommandPump : CommandPump
+    public class SynchronousCommandPump : EventProcessor
     {
         readonly Registry<ParameterizedCommand<string>> commands;
         readonly CommandProcessor processor;
@@ -17,7 +17,7 @@ namespace mars.rover.presentation.infrastructure
             this.factory = factory;
         }
 
-        public virtual void run<Command, Input>(Input input) where Command : ParameterizedCommand<Input>
+        public virtual void process<Command, Input>(Input input) where Command : ParameterizedCommand<Input>
         {
             processor.add(factory.create_for(() => get<Command, Input>().run_against(input)));
         }
