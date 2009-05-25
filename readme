@@ -50,3 +50,13 @@ MMRMMRMRRM
 Expected Output:
 1 3 N
 5 1 E
+
+INSTRUCTIONS
+-------------
+open up a command prompt in the build folder:
+
+to run the tests:
+$ build tests
+
+to run the program:
+$ build run
